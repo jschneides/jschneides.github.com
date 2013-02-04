@@ -29,11 +29,11 @@ border-collapse: collapse;
 .bottom td{
 border-bottom: 1px solid #C8C8C8;
 }
-p,li{
+#description{
 margin-left: 244px;
 font-size: 90%;
 }
-p1{
+#activity{
 margin-left: 244px;
 font-weight: bold;
 font-size: 125%;
