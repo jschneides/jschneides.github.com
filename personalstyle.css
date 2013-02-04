@@ -1,0 +1,87 @@
+body {
+font-family: Georgia, serif;
+color: #181818;
+}
+h1 {
+font-size: 300%;
+}
+h2{
+font-style: italic;
+margin-left: 40px;
+}
+h4{
+margin-left: 30%;
+}
+table{
+margin-left: 30%;
+width: 600px;
+height: 100px;
+font-size: 90%;
+border-collapse: collapse;
+}
+.bottom td{
+border-bottom: 1px solid #C8C8C8;
+}
+.description{
+margin-left: 244px;
+font-size: 90%;
+}
+.activity{
+margin-left: 244px;
+font-weight: bold;
+font-size: 125%;
+}
+img.top{
+position: relative;
+vertical-align:top;
+}
+#orient{
+position: relative;
+left: 30px;
+top: 200px;
+font-size: 165%;
+}
+#orient2{
+position: relative;
+right: 88px;
+top: 300px;
+font-size: 165%;
+}
+#sameline1{
+margin-left: 70px;
+font-style: normal;
+font-size: 110%;
+}
+.sameline2{
+margin-left: 18px;
+font-style: normal;
+font-size: 60%;
+color: #989898;
+}
+#boxed{
+width:820px;
+padding-left:4%;
+padding-right:4%;
+padding-top: 2%;
+border:2px solid #181818;
+border-top: 14px solid #181818;
+border-bottom: 8px solid #181818;
+margin-left:auto;
+margin-right:auto;
+background: white;
+}
+a:link {
+text-decoration:none;
+}
+a:visited {
+text-decoration:none;
+}
+a:hover {
+background-color: #D8D8D8;
+}
+a:active {
+text-decoration:none;
+}
+
+
+
