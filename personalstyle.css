@@ -32,14 +32,16 @@ font-weight: bold;
 font-size: 125%;
 }
 img.top{
-position: relative;
-vertical-align:top;
+float: left;
+margin: 4px;
+margin-right: 50px;
+/*position: relative;
+vertical-align:top;*/
 }
 #orient{
-position: relative;
-left: 30px;
-top: 200px;
-font-size: 165%;
+left: 100px;
+margin-top: 200px;
+font-size: 200%;
 }
 #orient2{
 position: relative;
