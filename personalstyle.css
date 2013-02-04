@@ -33,9 +33,7 @@ font-size: 125%;
 }
 img.top{
 float: left;
-padding: 4px;
-/*position: relative;
-vertical-align:top;*/
+padding-right: 50px;
 }
 #orient{
 left: 100px;
