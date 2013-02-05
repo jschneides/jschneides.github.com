@@ -1,0 +1,3 @@
+1. I have all three .html files, all correctly named. My resume.html has my full name, education, relevant coursework, professional experience, skills, and activities. My bio.html includes a brief bio of myself. My index.html has my name, photo, and links to my resume and bio. I have at least two CSS files, and all my html files and CSS files pass the validation test.
+2. I talked with Karthic Aragam about this assignment.
+3. I spent approximately 6-7 hours on this assignment.
