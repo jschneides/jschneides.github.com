@@ -1,0 +1,1 @@
+The iPhone (or any device with a width of fewer than 640 pixels) displays "Dice" while any device with a greater width will display "No dice"
