@@ -25,7 +25,7 @@ function make_marker(position) {
 	var location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
-		title: "Current Location"
+		title: "Current Location",
 		icon: image
 	});
 }
