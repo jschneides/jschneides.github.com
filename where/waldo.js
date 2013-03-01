@@ -70,7 +70,7 @@ function mark_stop(lat,lng,stop) {
 }
 function make_infowindow(latlng, stop) {
 	var str;
-	for(i=0; i<train_data.length; i++) {
+	for(j=0; j<train_data.length; j++) {
 		//if (stop[
 	}
 }
