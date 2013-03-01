@@ -25,6 +25,6 @@ function make_marker(position) {
 		position: mylatlng,
 		map: map,
 		title: "Current Location"
-		icon: "mbta_red_100.png"
+		icon: 'http://erikdemaine.org/maps/mbta/icons/mbta_red_100.png'
 	});
 }
