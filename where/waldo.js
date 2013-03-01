@@ -10,20 +10,20 @@ function initialize() {
 }
 function get_location() {
 	if (navigator.geolocation) {
-    	navigator.geolocation.getCurrentPosition(make_marker, make_window);
+    	navigator.geolocation.getCurrentPosition(make_marker("Current Location"));
     	
 	}
 }
 
 
-function make_marker(position) {
+function make_marker(position, str) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
 	var mylatlng = new google.maps.LatLng(lat,lng);
 	location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
-		title: "Current Location",
+		title: str,
 		icon: image
 	});
 }
