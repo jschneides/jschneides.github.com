@@ -16,7 +16,7 @@ function get_location() {
 }
 
 
-function make_marker(position, str) {
+function make_marker(position) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
 	var mylatlng = new google.maps.LatLng(lat,lng);
