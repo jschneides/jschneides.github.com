@@ -1,3 +1,4 @@
+var image = "mbta_red_100.png";
 function initialize() {
 	mapOptions = {
           center: new google.maps.LatLng(42.360996,-71.075478),
@@ -25,6 +26,6 @@ function make_marker(position) {
 		position: mylatlng,
 		map: map,
 		title: "Current Location"
-		icon: 'http://erikdemaine.org/maps/mbta/icons/mbta_red_100.png'
+		icon: image
 	});
 }
