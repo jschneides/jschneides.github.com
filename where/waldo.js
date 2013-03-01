@@ -19,7 +19,7 @@ function make_marker(position) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
 	var mylatlng = new google.maps.LatLng(lat,lng);
-	location = new google.maps.Marker({
+	var location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
 		title: "Your Location",
