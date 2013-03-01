@@ -6,9 +6,9 @@ function initialize() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-    //get_location();
+    get_location();
 }
-/*function get_location() {
+function get_location() {
 	if (navigator.geolocation) {
     	navigator.geolocation.getCurrentPosition(make_marker);
 	}
@@ -25,5 +25,5 @@ function make_marker(position) {
 		//title: "Your Location"
 		//icon: image
 	});
-}*/
+}
 
