@@ -1,6 +1,6 @@
 var image = "mbta_red_100.png";
 t_coords = new Object;
-t_coords = [{'stop':'Alewife', 'lat':42.395428, 'lng':-71.142483}, {'stop':'Davis', 'lat':42.39674, 'lng':71.121815}, {'stop':'Porter', 'lat':42.3884, 'lng':71.119149}]
+t_coords = [{'stop':'Alewife', 'lat':42.395428, 'lng':-71.142483}, {'stop':'Davis', 'lat':42.39674, 'lng':-71.121815}, {'stop':'Porter', 'lat':42.3884, 'lng':-71.119149}]
 function initialize() {
 	mapOptions = {
           center: new google.maps.LatLng(42.360996,-71.075478),
