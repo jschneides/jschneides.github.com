@@ -27,12 +27,3 @@ function make_marker(position) {
 	});
 }
 
-/*function make_window(position) {
-	lat = position.coords.latitude;
-	lng = position.coords.longitude;
-	var mylatlng = new google.maps.LatLng(lat,lng);
-	var infowindow = new google.maps.InfoWindow({
-		content: "I am here at " + lat + ", " + lng
-	}); 
-	infowindow.open(map, location);
-}*/
