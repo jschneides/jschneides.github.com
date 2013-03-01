@@ -6,6 +6,7 @@ function initialize() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    init_stops();
     get_location();
 }
 function get_location() {
@@ -23,7 +24,6 @@ function make_current_location(position) {
 		position: mylatlng,
 		map: map,
 		title: "Your Location",
-		icon: image
 	});
 	var infowindow = new google.maps.InfoWindow({
 		content: "You are at " + lat + ", " + lng
@@ -32,5 +32,18 @@ function make_current_location(position) {
 	
 }
 
-//test
+function init_stops() {
+	mark_stop(42.395428, 71.142483); //alewife
+}
+
+function mark_stop(lat, lng) {
+	console.log(lat);
+	var latlng = new google.maps.LatLng(lat,lng);
+	var location = new google.maps.Marker({
+		position: latlng,
+		map: map,
+		icon: image
+	})
+}
+
 
