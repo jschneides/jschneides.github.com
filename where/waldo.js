@@ -5,7 +5,7 @@ function initialize() {
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+   // map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
     //get_location();
 }
 /*function get_location() {
