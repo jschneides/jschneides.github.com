@@ -28,7 +28,7 @@ function make_marker(position, str) {
 	});
 }
 
-function make_window(position) {
+/*function make_window(position) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
 	var mylatlng = new google.maps.LatLng(lat,lng);
@@ -36,4 +36,4 @@ function make_window(position) {
 		content: "I am here at " + lat + ", " + lng
 	}); 
 	infowindow.open(map, location);
-}
+}*/
