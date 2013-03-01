@@ -1,4 +1,4 @@
-var image = "mbta_red_100.png";
+//var image = "mbta_red_100.png";
 function initialize() {
 	mapOptions = {
           center: new google.maps.LatLng(42.360996,-71.075478),
@@ -11,7 +11,6 @@ function initialize() {
 function get_location() {
 	if (navigator.geolocation) {
     	navigator.geolocation.getCurrentPosition(make_marker);
-    	
 	}
 }
 
@@ -23,7 +22,8 @@ function make_marker(position) {
 	location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
-		icon: image
+		title: "Your Location"
+		//icon: image
 	});
 }
 
