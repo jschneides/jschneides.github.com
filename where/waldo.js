@@ -10,7 +10,7 @@ function initialize() {
 }
 function get_location() {
 	if (navigator.geolocation) {
-    	navigator.geolocation.getCurrentPosition(make_marker("Current Location"));
+    	navigator.geolocation.getCurrentPosition(make_marker);
     	
 	}
 }
@@ -23,7 +23,6 @@ function make_marker(position, str) {
 	location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
-		title: str,
 		icon: image
 	});
 }
