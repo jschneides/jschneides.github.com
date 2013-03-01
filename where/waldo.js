@@ -36,3 +36,4 @@ function make_window(position) {
 		content: "I am here at " + lat + ", " + lng
 	}); 
 	infowindow.open(map, location);
+}
