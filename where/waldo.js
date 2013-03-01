@@ -1,4 +1,6 @@
 var image = "mbta_red_100.png";
+t_coords = new Object;
+t_coords = [{'stop':'Alewife', 'lat':42.395428, 'lng':-71.142483}, {'stop':'Davis', 'lat':42.39674, 'lng':71.121815}, {'stop':'Porter', 'lat':42.3884, 'lng':71.119149}]
 function initialize() {
 	mapOptions = {
           center: new google.maps.LatLng(42.360996,-71.075478),
@@ -33,10 +35,15 @@ function make_current_location(position) {
 }
 
 function init_stops() {
-	mark_stop(42.395428, 71.142483); //alewife
+	for(i=0;i<3;i++) {
+		lat = t_coords[i]['lat'];
+		lng = t_coords[i]['lng'];
+		stop = t_coords[i]['stop'];
+		mark_stop(lat,lng,stop);
+	}
 }
 
-function mark_stop(lat, lng) {
+function mark_stop(lat,lng,stop) {
 	console.log(lat);
 	var latlng = new google.maps.LatLng(lat,lng);
 	var location = new google.maps.Marker({
