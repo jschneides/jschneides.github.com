@@ -37,7 +37,7 @@ function get_location() {
 function make_current_location(position) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
-	var str = '<div id=myloc> <h2> You are here at'+lat ', ' lng '</h2>';
+	var str = '<div id=myloc> <h2> You are here at'+lat+ ', ' +lng +'</h2>';
 	var mylatlng = new google.maps.LatLng(lat,lng);
 	var location = new google.maps.Marker({
 		position: mylatlng,
@@ -45,7 +45,7 @@ function make_current_location(position) {
 		title: "Your Location",
 	});
 	var infowindow = new google.maps.InfoWindow({
-		content: "You are at " + lat + ", " + lng
+		content: str
 	})
 	infowindow.open(map, location);
 }
