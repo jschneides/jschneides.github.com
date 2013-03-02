@@ -57,13 +57,13 @@ function make_current_location(position) {
 function closest(lat1, lng1) {
 	var lat2, lng2, d, closet_station;
 	var return_vars = [];
-	var max_d = 0;
+	var min_d ;
 	for (i=0; i<t_coords.length; i++) {
 		lat2 = t_coords[i]['lat'];
 		lng2 = t_coords[i]['lng'];
 		d = distance(lat1, lat2, lng1, lng2);
-		if (d>max_d) {
-			max_d = d;
+		if (d<min_d || i=0) {
+			min_d = d;
 			closest_station = t_coords[i]['stop'];
 		}
 	}
