@@ -47,7 +47,7 @@ function make_current_location(position) {
 	var infowindow = new google.maps.InfoWindow({
 		content: str
 	})
-	infowindow.open(map, location);
+	//infowindow.open(map, location);
 }
 
 function init_stops() {
