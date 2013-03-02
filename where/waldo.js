@@ -67,7 +67,7 @@ function closest(lat1, lng1) {
 			closest_station = t_coords[i]['stop'];
 		}
 	}
-	return_vars[0] = max_d;
+	return_vars[0] = min_d;
 	return_vars[1] = closest_station
 	return return_vars;
 }
