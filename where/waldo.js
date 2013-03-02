@@ -39,7 +39,10 @@ function get_location() {
 function make_current_location(position) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
-	var str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>';
+	var near_station = closest(lat, lng);
+	var str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
+			  '<p> The closest station to you is <span id="station">' + near_station[1] +
+			  '</span> which is approximately' + near_station[0] + 'miles away from you </p></div>'
 	var mylatlng = new google.maps.LatLng(lat,lng);
 	var location = new google.maps.Marker({
 		position: mylatlng,
@@ -51,7 +54,36 @@ function make_current_location(position) {
 	})
 	infowindow.open(map, location);
 }
+function closest(lat1, lng1) {
+	var lat2, lng2, d, closet_station;
+	var return_vars = [];
+	var max_d = 0;
+	for (i=0; i<t_coords.length; i++) {
+		lat2 = t_coords[i]['lat'];
+		lng2 = t_coords[i]['lng'];
+		d = distance(lat1, lat2, lng1, lng2);
+		if (d>max_d) {
+			max_d = d;
+			closest_station = t_coords[i]['stop'];
+		}
+	}
+	return_vars[0] = max_d;
+	return_vars[1] = closest_station
+	return return_vars;
+}
+function distance(lat1, lat2, lng1, lng2) {
+	var R = 3963.1676; // miles
+	var dLat = (lat2-lat1).toRad();
+	var dLon = (lon2-lon1).toRad();
+	var lat1 = lat1.toRad();
+	var lat2 = lat2.toRad();
 
+	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	var d = R * c;
+	return d;
+}
 function init_stops() {
 	for(i=0;i<t_coords.length;i++) {
 		lat = t_coords[i]['lat'];
