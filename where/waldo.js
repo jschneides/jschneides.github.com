@@ -62,7 +62,7 @@ function closest(lat1, lng1) {
 		lat2 = t_coords[i]['lat'];
 		lng2 = t_coords[i]['lng'];
 		d = distance(lat1, lat2, lng1, lng2);
-		if (d<min_d || i=0) {
+		if (d<min_d || i==0) {
 			min_d = d;
 			closest_station = t_coords[i]['stop'];
 		}
