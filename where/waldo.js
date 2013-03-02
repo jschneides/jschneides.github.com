@@ -85,7 +85,7 @@ function distance(lat1, lat2, lng1, lng2) {
 	return d;
 }
 function toRad(x) {
-	return x * MATH.PI / 180;
+	return x * Math.PI / 180;
 }
 function init_stops() {
 	for(i=0;i<t_coords.length;i++) {
