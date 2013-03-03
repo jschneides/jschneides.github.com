@@ -18,7 +18,7 @@ function callback() {
 		train_data = JSON.parse(request.responseText);
 		init_stops();
 		init_polylines();
-		get_carmen_waldo();
+		//get_carmen_waldo();
 	}
 }
 function initialize() {
@@ -28,8 +28,9 @@ function initialize() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-    get_location();
+    //get_location();
     get_train_data();
+    get_location();
    //	get_carmen_waldo();
 
 
