@@ -12,7 +12,7 @@ function get_train_data() {
 	request.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
 	request.send(null);
 	request.onreadystatechange = callback;
-}
+}d
 function callback() {
 	if (request.readyState == 4 && request.status == 200) {
 		train_data = JSON.parse(request.responseText);
@@ -199,6 +199,7 @@ function handle_waldo_carmen() {
 					 "He is " + wal_distance + " miles away from you!"
 		})
 		wal_window.open(map,wal_latlng);
+		console.log("uh oh");
 	}
 	else {
 	
