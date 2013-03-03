@@ -199,7 +199,7 @@ function handle_waldo_carmen() {
 					 "He is " + wal_distance + " miles away from you!"
 		})
 		console.log("uh oh");
-		wal_window.open(map,wal_mark);
+		//wal_window.open(map,wal_mark);
 		console.log("uh oh");
 	}
 	else {
