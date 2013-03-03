@@ -29,8 +29,8 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
     get_location();
     get_train_data();
-   // get_carmen_waldo();
-    //init_stops();
+   	get_carmen_waldo();
+
 
 }
 function get_location() {
@@ -166,7 +166,7 @@ function make_infowindow(latlng, marker) {
 	});
 }
 
-/*function get_carmen_waldo() {
+function get_carmen_waldo() {
 	request2.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 	request2.send(null);
 	request2.onreadystatechange = callback2;
@@ -180,5 +180,5 @@ function callback2() {
     	window.alert("I'm sorry, Carmen and Waldo cannot be found!");
     }
 }
-*/
+
 
