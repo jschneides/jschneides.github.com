@@ -18,7 +18,7 @@ function callback() {
 		train_data = JSON.parse(request.responseText);
 		init_stops();
 		init_polylines();
-		get_carmen_waldo();
+		//get_carmen_waldo();
 	}
 }
 function initialize() {
