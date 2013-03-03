@@ -18,7 +18,7 @@ function callback() {
 		train_data = JSON.parse(request.responseText);
 		init_stops();
 		init_polylines();
-		get_carmen_waldo();
+		//get_carmen_waldo();
 	}
 }
 function initialize() {
@@ -167,7 +167,7 @@ function make_infowindow(latlng, marker) {
 	});
 }
 
-function get_carmen_waldo() {
+/*function get_carmen_waldo() {
 	request2.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 	request2.send(null);
 	request2.onreadystatechange = callback2;
@@ -180,6 +180,6 @@ function callback2() {
     if (request2.status == 0) {
     	//window.alert("I'm sorry, Carmen and Waldo cannot be found!");
     }
-}
+}*/
 
 
