@@ -191,22 +191,28 @@ function callback2() {
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
 	if(data[0]['name'] == "Waldo") {
-		console.log("test1");
 		var wal_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
-		var str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
+		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
 				  "He is " + wal_distance + " miles away from you."
 		var wal_mark = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Waldo", waldo_img);	
 		var wal_window = new google.maps.InfoWindow({
-			content: str
+			content: w_str
 		})
-		console.log("uh oh");
 		google.maps.event.addListener(wal_mark, 'click', function() {
   			wal_window.open(map,wal_mark);
 		});
-		console.log("uh oh");
 	}
 	else {
-	
+		var carm_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
+		var c_str = "<div class= 'wal_carm'> Carmen Sandiego's location: " + data[0]['loc']['note'] + '<br>' +
+				  She is " + wal_distance + " miles away from you."
+		var carm_mark = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Carmen Sandiego", carmen_img);	
+		var carm_window = new google.maps.InfoWindow({
+			content: c_str
+		})
+		google.maps.event.addListener(carm_mark, 'click', function() {
+  			carm_window.open(map,carm_mark);
+		});
 	}
 	
 }
