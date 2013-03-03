@@ -175,10 +175,10 @@ function get_carmen_waldo() {
 
 function callback2() {
 	if (request2.readyState == 4 && request2.status == 200) {
-        window.alert("it worked!");
+        //window.alert("it worked!");
     }
     if (request2.status == 0) {
-    	window.alert("I'm sorry, Carmen and Waldo cannot be found!");
+    	//window.alert("I'm sorry, Carmen and Waldo cannot be found!");
     }
 }
 
