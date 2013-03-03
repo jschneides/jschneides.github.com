@@ -28,10 +28,10 @@ function initialize() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-    //get_location();
+    get_location();
     get_train_data();
     get_carmen_waldo();
-    get_location();
+   // get_location();
    //	get_carmen_waldo();
 
 
@@ -99,22 +99,24 @@ function init_stops() {
 		lat = t_coords[i]['lat'];
 		lng = t_coords[i]['lng'];
 		stop = t_coords[i]['stop'];
-		latlng_marker = mark_stop(lat,lng,stop);
-		make_infowindow(latlng_marker[0], latlng_marker[1]);
+		t_marker = mark_stop(lat,lng,stop,t_image);
+		make_infowindow(t_marker);
 	}
 }
 
-function mark_stop(lat,lng,stop) {
-	var arrival_info;
+function mark_stop(lat,lng,name,image) {
+	//var arrival_info;
 	var latlng = new google.maps.LatLng(lat,lng);
-	locations[i] = latlng;
+	if(name!='Carmen Sandiego' && name!="Waldo"){
+		locations[i] = latlng;
+	}
 	var t_marker = new google.maps.Marker({
 		position: latlng,
 		map: map,
-		title: stop,
-		icon: t_image
+		title: name,
+		icon: image
 	})
-	return [latlng, t_marker];
+	return t_marker;
 }
 
 function init_polylines() {
@@ -147,7 +149,7 @@ function init_polylines() {
 	braintree.setMap(map);
 }
 
-function make_infowindow(latlng, marker) {
+function make_infowindow( marker) {
 	var str = '<div id="content">' + 
 		'<h1>' + t_coords[i]['stop'] + '</h1>' +
 		'<table id="tbl">' +
@@ -178,10 +180,28 @@ function get_carmen_waldo() {
 function callback2() {
 	if (request2.readyState == 4 && request2.status == 200) {
         console.log("it worked");
+        handle_waldo_carmen();
     }
     if (request2.status == 0) {
     	console.log("it didnt work");
     }
 }
 
+function handle_waldo_carmen() {
+	data = JSON.parse(request2.responseText);
+	if(data[0]['name'] == "Waldo") {
+		var wal_latlng = new google.maps.LatLng(data[0]['loc']['latitude'], data[0]['loc']['longitude']);
+		var wal_mark = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Waldo", waldo_img);	
+		var wal_distance = (lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
+		var wal_window = new google.maps.InfoWindow({
+			content: "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
+					 "He is " + wal_distance + " miles away from you!"
+		})
+		wal_window.open(map,wal_latlng);
+	}
+	else {
+	
+	}
+	
+}
 
