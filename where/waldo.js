@@ -228,7 +228,6 @@ function handle_waldo_carmen() {
 		console.log("test");
 	}	
 	catch(error) {
-		console.log("hi")
 	}
 	
 }
