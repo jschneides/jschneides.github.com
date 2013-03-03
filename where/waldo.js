@@ -18,7 +18,7 @@ function callback() {
 		train_data = JSON.parse(request.responseText);
 		init_stops();
 		init_polylines();
-		//get_carmen_waldo();
+		get_carmen_waldo();
 	}
 }
 function initialize() {
@@ -175,7 +175,7 @@ function get_carmen_waldo() {
 
 function callback2() {
 	if (request2.readyState == 4 && request2.status == 200) {
-        //window.alert("it worked!");
+        console.log("it worked");
     }
     if (request2.status == 0) {
     	window.alert("I'm sorry, Carmen and Waldo cannot be found!");
