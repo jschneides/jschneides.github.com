@@ -12,7 +12,7 @@ function get_train_data() {
 	request.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
 	request.send(null);
 	request.onreadystatechange = callback;
-}d
+}
 function callback() {
 	if (request.readyState == 4 && request.status == 200) {
 		train_data = JSON.parse(request.responseText);
