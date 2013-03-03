@@ -191,11 +191,10 @@ function callback2() {
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
 	if(data[0]['name'] == "Waldo") {
-		//var wal_latlng = new google.maps.LatLng(data[0]['loc']['latitude'], data[0]['loc']['longitude']);
+		var wal_distance = (lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
 		var str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
 				  "He is " + wal_distance + " miles away from you!"
 		var wal_mark = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Waldo", waldo_img);	
-		var wal_distance = (lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
 		var wal_window = new google.maps.InfoWindow({
 			content: str
 		})
