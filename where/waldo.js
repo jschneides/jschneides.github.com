@@ -225,7 +225,7 @@ function handle_waldo_carmen() {
 		google.maps.event.addListener(carm_mark, 'click', function() {
   			carm_window.open(map,carm_mark);
 		});	
-	catch(error) {}
+	catch(error) {console.log("hi"}
 	
 }
 
