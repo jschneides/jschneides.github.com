@@ -200,7 +200,7 @@ function handle_waldo_carmen() {
 			content: str
 		})
 		console.log("uh oh");
-		google.maps.event.addListener(marker, 'click', function() {
+		google.maps.event.addListener(wal_mark, 'click', function() {
   			wal_window.open(map,wal_mark);
 		});
 		console.log("uh oh");
