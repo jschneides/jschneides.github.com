@@ -198,6 +198,7 @@ function handle_waldo_carmen() {
 			content: "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
 					 "He is " + wal_distance + " miles away from you!"
 		})
+		console.log("uh oh");
 		wal_window.open(map,wal_latlng);
 		console.log("uh oh");
 	}
