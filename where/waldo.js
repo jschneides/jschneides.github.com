@@ -218,7 +218,7 @@ function handle_waldo_carmen() {
 		var carm_distance2 = distance(lat, data[1]['loc']['latitude'], lng, data[1]['loc']['longitude']);
 		var c_str2 = "<div class= 'wal_carm'> Carmen Sandiego's location: " + data[1]['loc']['note'] + '<br>' +
 				  "She is " + carm_distance2 + "miles away from you."
-		var carm_mark2 = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Carmen Sandiego", carmen_img);	
+		var carm_mark2 = mark_stop(data[1]['loc']['latitude'], data[1]['loc']['longitude'], "Carmen Sandiego", carmen_img);	
 		var carm_window2 = new google.maps.InfoWindow({
 			content: c_str2
 		})
