@@ -180,7 +180,7 @@ function callback2() {
         console.log("it worked");
     }
     if (request2.status == 0) {
-    	window.alert("I'm sorry, Carmen and Waldo cannot be found!");
+    	console.log("it didnt work");
     }
 }
 
