@@ -41,13 +41,13 @@ function get_location() {
 
 
 function make_current_location(position) {
-	mylat = position.coords.latitude;
-	mylng = position.coords.longitude;
-	var near_station = closest(mylat, mylng);
-	var str = '<div id=myloc> <h2> You are here at '+mylat+ ', ' +mylng +'</h2>' +
+	lat = position.coords.latitude;
+	lng = position.coords.longitude;
+	var near_station = closest(lat, lng);
+	var str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
 			  '<p> The closest station to you is <span id="station">' + near_station[1] +
 			  '</span> which is approximately ' + near_station[0] + ' miles away from you. </p></div>'
-	var mylatlng = new google.maps.LatLng(mylat,mylng);
+	var mylatlng = new google.maps.LatLng(lat,lng);
 	var location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
