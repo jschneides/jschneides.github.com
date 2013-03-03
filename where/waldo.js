@@ -47,7 +47,7 @@ function make_current_location(position) {
 	lat = position.coords.latitude;
 	lng = position.coords.longitude;
 	var near_station = closest(lat, lng);
-	var str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
+	my_str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
 			  '<p> The closest station to you is <span id="station">' + near_station[1] +
 			  '</span> which is approximately ' + near_station[0] + ' miles away from you. </p></div>'
 	var mylatlng = new google.maps.LatLng(lat,lng);
@@ -57,7 +57,7 @@ function make_current_location(position) {
 		title: "Your Location",
 	});
 	var infowindow = new google.maps.InfoWindow({
-		content: str
+		content: my_str
 	})
 	infowindow.open(map, location);
 	get_carmen_waldo();
@@ -184,7 +184,7 @@ function callback2() {
         handle_waldo_carmen();
     }
     if (request2.status == 0) {
-    	console.log("it didnt work");
+    	my_str = my_str + "Waldo and Carmen are nowhere to be found!";
     }
 }
 
