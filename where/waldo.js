@@ -28,10 +28,10 @@ function initialize() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-    get_location();
-    get_train_data();
-    get_carmen_waldo();
    // get_location();
+    get_train_data();
+    //get_carmen_waldo();
+    get_location();
    //	get_carmen_waldo();
 
 
@@ -60,6 +60,7 @@ function make_current_location(position) {
 		content: str
 	})
 	infowindow.open(map, location);
+	get_carmen_waldo();
 }
 function closest(lat1, lng1) {
 	var lat2, lng2, d, closet_station;
