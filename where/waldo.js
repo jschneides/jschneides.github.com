@@ -184,7 +184,7 @@ function callback2() {
         handle_waldo_carmen();
     }
     if (request2.status == 0) {
-    	my_str = my_str + "Waldo and Carmen are nowhere to be found!";
+    	window.alert("Waldo and Carmen are nowhere to be found!");
     }
 }
 
