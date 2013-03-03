@@ -178,7 +178,7 @@ function callback2() {
         //window.alert("it worked!");
     }
     if (request2.status == 0) {
-    	//window.alert("I'm sorry, Carmen and Waldo cannot be found!");
+    	window.alert("I'm sorry, Carmen and Waldo cannot be found!");
     }
 }
 
