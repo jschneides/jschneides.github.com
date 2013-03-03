@@ -29,7 +29,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
     get_location();
     get_train_data();
-    get_carmen_waldo();
+   // get_carmen_waldo();
     //init_stops();
 
 }
