@@ -227,9 +227,9 @@ function handle_waldo_carmen() {
   			carm_window2.open(map,carm_mark2);
 		});
 		console.log("test");
+		console.log(lat);
 	}	
 	catch(error) {
 	}
-		console.log(lat);
 }
 
