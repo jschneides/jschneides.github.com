@@ -230,6 +230,6 @@ function handle_waldo_carmen() {
 		console.log(lat);
 	}	
 	catch(error) {
-	}
-}*/
+	}*/
+}
 
