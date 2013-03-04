@@ -190,7 +190,8 @@ function callback2() {
 
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
-	
+	console.log("mylat: " + mylat);
+	console.log("mylon: " + mylon);
 	if(data[0]['name'] == "Waldo") {
 		var wal_distance = distance(mylat, data[0]['loc']['latitude'], mylng, data[0]['loc']['longitude']);
 		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
