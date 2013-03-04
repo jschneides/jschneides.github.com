@@ -50,7 +50,6 @@ function make_current_location(position) {
 	my_str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
 			  '<p> The closest station to you is <span id="station">' + near_station[1] +
 			  '</span> which is approximately ' + near_station[0] + ' miles away from you. </p></div>'
-	console.log(lat);
 	var mylatlng = new google.maps.LatLng(lat,lng);
 	var location = new google.maps.Marker({
 		position: mylatlng,
@@ -191,6 +190,7 @@ function callback2() {
 
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
+	console.log(lat);
 	if(data[0]['name'] == "Waldo") {
 		var wal_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
 		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
