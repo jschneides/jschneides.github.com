@@ -105,9 +105,9 @@ function init_stops() {
 	}
 }
 
-function mark_stop(lat,lng,name,image) {
+function mark_stop(latitude,longitude,name,image) {
 	//var arrival_info;
-	var latlng = new google.maps.LatLng(lat,lng);
+	var latlng = new google.maps.LatLng(latitude,longitude);
 	if(name!='Carmen Sandiego' && name!="Waldo"){
 		locations[i] = latlng;
 	}
