@@ -44,13 +44,13 @@ function get_location() {
 
 
 function make_current_location(position) {
-	lat = position.coords.latitude;
-	lng = position.coords.longitude;
+	mylat = position.coords.latitude;
+	mylng = position.coords.longitude;
 	var near_station = closest(lat, lng);
-	my_str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
+	my_str = '<div id=myloc> <h2> You are here at '+mylat+ ', ' +mylng +'</h2>' +
 			  '<p> The closest station to you is <span id="station">' + near_station[1] +
 			  '</span> which is approximately ' + near_station[0] + ' miles away from you. </p></div>'
-	var mylatlng = new google.maps.LatLng(lat,lng);
+	var mylatlng = new google.maps.LatLng(mylat,mylng);
 	var location = new google.maps.Marker({
 		position: mylatlng,
 		map: map,
@@ -62,14 +62,14 @@ function make_current_location(position) {
 	infowindow.open(map, location);
 	get_carmen_waldo();
 }
-function closest(lat1, lng1) {
+function closest(mylat, mylng) {
 	var lat2, lng2, d, closet_station;
 	var return_vars = [];
 	var min_d ;
 	for (i=0; i<t_coords.length; i++) {
 		lat2 = t_coords[i]['lat'];
 		lng2 = t_coords[i]['lng'];
-		d = distance(lat1, lat2, lng1, lng2);
+		d = distance(mylat, lat2, mylng, lng2);
 		if (d<min_d || i==0) {
 			min_d = d;
 			closest_station = t_coords[i]['stop'];
@@ -79,15 +79,15 @@ function closest(lat1, lng1) {
 	return_vars[1] = closest_station
 	return return_vars;
 }
-function distance(lat1, lat2, lng1, lng2) {
+function distance(mylat, lat2, mylng, lng2) {
 	var R = 3963.1676; // miles
-	var dLat = toRad(lat2-lat1);
-	var dLon = toRad(lng2-lng1);
-	var lat1 = toRad(lat1);
-	var lat2 = toRad(lat2);
+	var dLat = toRad(lat2-mylat);
+	var dLon = toRad(lng2-mylng);
+	var latA = toRad(mylat);
+	var latB = toRad(lat2);
 
 	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(latA) * Math.cos(latB); 
 	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 	var d = R * c;
 	return d;
