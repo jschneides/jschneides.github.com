@@ -215,7 +215,6 @@ function handle_waldo_carmen() {
   			carm_window.open(map,carm_mark);
 		});
 	}
-	console.log(lat);
 	try {
 		var carm_distance2 = distance(lat, data[1]['loc']['latitude'], lng, data[1]['loc']['longitude']);
 		var c_str2 = "<div class= 'wal_carm'> Carmen Sandiego's location: " + data[1]['loc']['note'] + '<br>' +
@@ -231,6 +230,6 @@ function handle_waldo_carmen() {
 	}	
 	catch(error) {
 	}
-	
+		console.log(lat);
 }
 
