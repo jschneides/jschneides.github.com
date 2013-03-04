@@ -50,6 +50,7 @@ function make_current_location(position) {
 	my_str = '<div id=myloc> <h2> You are here at '+lat+ ', ' +lng +'</h2>' +
 			  '<p> The closest station to you is <span id="station">' + near_station[1] +
 			  '</span> which is approximately ' + near_station[0] + ' miles away from you. </p></div>'
+	console.log(lat);
 	var mylatlng = new google.maps.LatLng(lat,lng);
 	var location = new google.maps.Marker({
 		position: mylatlng,
