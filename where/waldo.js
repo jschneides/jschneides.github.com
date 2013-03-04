@@ -192,7 +192,7 @@ function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
 	
 	if(data[0]['name'] == "Waldo") {
-		var wal_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
+		var wal_distance = distance(mylat, data[0]['loc']['latitude'], mylng, data[0]['loc']['longitude']);
 		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
 				  "He is " + wal_distance + " miles away from you."
 		var wal_mark = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Waldo", waldo_img);	
@@ -204,7 +204,7 @@ function handle_waldo_carmen() {
 		});
 	}
 	else {
-		var carm_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
+		var carm_distance = distance(mylat, data[0]['loc']['latitude'], mylng, data[0]['loc']['longitude']);
 		var c_str = "<div class= 'wal_carm'> Carmen Sandiego's location: " + data[0]['loc']['note'] + '<br>' +
 				  "She is " + carm_distance + " miles away from you."
 		var carm_mark = mark_stop(data[0]['loc']['latitude'], data[0]['loc']['longitude'], "Carmen Sandiego", carmen_img);	
@@ -216,7 +216,7 @@ function handle_waldo_carmen() {
 		});
 	}
 	try {
-		var carm_distance2 = distance(lat, data[1]['loc']['latitude'], lng, data[1]['loc']['longitude']);
+		var carm_distance2 = distance(mylat, data[1]['loc']['latitude'], mylng, data[1]['loc']['longitude']);
 		var c_str2 = "<div class= 'wal_carm'> Carmen Sandiego's location: " + data[1]['loc']['note'] + '<br>' +
 				  "She is " + carm_distance2 + "miles away from you."
 		var carm_mark2 = mark_stop(data[1]['loc']['latitude'], data[1]['loc']['longitude'], "Carmen Sandiego", carmen_img);	
