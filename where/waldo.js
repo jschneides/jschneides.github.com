@@ -190,7 +190,7 @@ function callback2() {
 
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
-	console.log(lat);
+	
 	if(data[0]['name'] == "Waldo") {
 		var wal_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
 		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
@@ -203,6 +203,7 @@ function handle_waldo_carmen() {
   			wal_window.open(map,wal_mark);
 		});
 	}
+	console.log(lat);
 	else {
 		var carm_distance = distance(lat, data[0]['loc']['latitude'], lng, data[0]['loc']['longitude']);
 		var c_str = "<div class= 'wal_carm'> Carmen Sandiego's location: " + data[0]['loc']['note'] + '<br>' +
