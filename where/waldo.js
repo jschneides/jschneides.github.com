@@ -165,7 +165,6 @@ function get_carmen_waldo() {
 }
 function callback2() {
 	if (request2.readyState == 4 && request2.status == 200) {
-        console.log("it worked");
         handle_waldo_carmen();
     }
     if (request2.status == 0) {
@@ -174,8 +173,6 @@ function callback2() {
 }
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
-	console.log("mylat: " + mylat);
-	console.log("mylon: " + mylng);
 	if(data[0]['name'] == "Waldo") {
 		var wal_distance = distance(mylat, data[0]['loc']['latitude'], mylng, data[0]['loc']['longitude']);
 		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
