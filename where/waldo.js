@@ -118,7 +118,7 @@ function init_polylines() {
 			to_braintree[k] = locations[k];
 		}
 	}
-	l=13; // number of t stops on the red line until it splits 
+	l=13; 
 	for(k=17; k<22; k++) {
 		to_braintree[l] = locations[k];
 		l++;
@@ -173,6 +173,7 @@ function callback2() {
 }
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
+	if(data.length != 0) {
 	if(data[0]['name'] == "Waldo") {
 		var wal_distance = distance(mylat, data[0]['loc']['latitude'], mylng, data[0]['loc']['longitude']);
 		var w_str = "<div class= 'wal_carm'> Waldo's location: " + data[0]['loc']['note'] + '<br>' +
@@ -210,5 +211,9 @@ function handle_waldo_carmen() {
 		});
 	}	
 	catch(error) {
+	}
+	}
+	else {
+	window.alert("Waldo and Carmen are nowhere to be found!");
 	}
 }
