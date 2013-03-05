@@ -18,7 +18,6 @@ function callback() {
 		train_data = JSON.parse(request.responseText);
 		init_stops();
 		init_polylines();
-		//get_carmen_waldo();
 	}
 }
 function initialize() {
@@ -28,21 +27,14 @@ function initialize() {
           mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-   // get_location();
     get_train_data();
-    //get_carmen_waldo();
     get_location();
-   //	get_carmen_waldo();
-
-
 }
 function get_location() {
 	if (navigator.geolocation) {
     	navigator.geolocation.getCurrentPosition(make_current_location);
 	}
 }
-
-
 function make_current_location(position) {
 	mylat = position.coords.latitude;
 	mylng = position.coords.longitude;
@@ -104,9 +96,7 @@ function init_stops() {
 		make_infowindow(t_marker);
 	}
 }
-
 function mark_stop(latitude,longitude,name,image) {
-	//var arrival_info;
 	var latlng = new google.maps.LatLng(latitude,longitude);
 	if(name!='Carmen Sandiego' && name!="Waldo"){
 		locations[i] = latlng;
@@ -119,7 +109,6 @@ function mark_stop(latitude,longitude,name,image) {
 	})
 	return t_marker;
 }
-
 function init_polylines() {
 	var to_ashmont = [];
 	var to_braintree = [];
@@ -149,7 +138,6 @@ function init_polylines() {
 	ashmont.setMap(map);
 	braintree.setMap(map);
 }
-
 function make_infowindow( marker) {
 	var str = '<div id="content">' + 
 		'<h1>' + t_coords[i]['stop'] + '</h1>' +
@@ -165,19 +153,16 @@ function make_infowindow( marker) {
 			'</td> <td> SOUTHBOUND </td> <td>' + train_data[j]['TimeRemaining'] + '</td> </tr>';
 		}
 	}
-
 	google.maps.event.addListener(marker, 'click', function() {
   		infowindow.setContent(str);
   		infowindow.open(map,marker);
 	});
 }
-
 function get_carmen_waldo() {
 	request2.open("GET", "http://messagehub.herokuapp.com/a3.json", true);
 	request2.send(null);
 	request2.onreadystatechange = callback2;
 }
-
 function callback2() {
 	if (request2.readyState == 4 && request2.status == 200) {
         console.log("it worked");
@@ -187,7 +172,6 @@ function callback2() {
     	window.alert("Waldo and Carmen are nowhere to be found!");
     }
 }
-
 function handle_waldo_carmen() {
 	data = JSON.parse(request2.responseText);
 	console.log("mylat: " + mylat);
@@ -231,4 +215,3 @@ function handle_waldo_carmen() {
 	catch(error) {
 	}
 }
-
