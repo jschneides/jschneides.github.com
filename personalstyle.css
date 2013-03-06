@@ -4,6 +4,7 @@ color: #000000;
 }
 h1 {
 font-size: 250%;
+text-align:center;
 }
 h2{
 font-style: italic;
@@ -35,6 +36,10 @@ font-size: 125%;
 img.top{
 float: left;
 padding-right: 50px;
+}
+#subhead{
+font-size: 110%;
+text-align: center;
 }
 #orient{
 left: 100px;
