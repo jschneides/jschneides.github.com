@@ -9,7 +9,7 @@ request2 = new XMLHttpRequest();
 var infowindow = new google.maps.InfoWindow;
 
 function get_train_data() {
-	request.open("GET", "http://mbtamap-cedar.herokuapp.com/mapper/redline.json", true);
+	request.open("GET", "http://mbtamap.herokuapp.com/mapper/redline.json", true);
 	request.send(null);
 	request.onreadystatechange = callback;
 }
